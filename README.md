@@ -8,6 +8,8 @@ This repository contains the resources and code for the **Smart Healthcare Syste
 - [Features](#features)
 - [Repository Structure](#repository-structure)
 - [Dataset Description](#dataset-description)
+- [Model Training](#model-training)
+- [Deployment](#deployment)
 
 ---
 
@@ -62,7 +64,7 @@ The model is deployed as a web application called **NeuroScan AI**, where users 
  ┃ ┣ 📜config_module.py               # Configuration module for model loading and app settings
  ┃ ┣ 📜model_load.py                  # Script to load pre-trained Faster R-CNN model
  ┃ ┗ 📜preprocessing.py               # Script for preprocessing MRI images before prediction
- ┣ 📂Nouveau dossier                  
+ ┣ 📜requirements.txt                 # File containing the list of dependencies and libraries required to run the project
  ┗ 📜README.md                        # Readme file explaining the project details and usage
 
 ```
@@ -188,7 +190,7 @@ The backend is powered by Flask, which processes the uploaded MRI images and con
    pip install -r requirements.txt
    ```
 2. **Run the Flask server**:
- ```bash
-   Flask run
-   ```
+    ```bash
+    Flask run
+    ```
 
