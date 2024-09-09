@@ -29,8 +29,8 @@ The model is deployed as a web application called **NeuroScan AI**, where users 
  ┣ 📂dataset                               # Directory containing the dataset and annotations
  ┃ ┣ 📂annotations                         # Annotations related to tumor regions (in various formats)
  ┃ ┃ ┣ 📜annotation.txt                    # Annotations for train data in text format
- ┃ ┃ ┣ 📜original_annotations.csv          # Original CSV file containing annotations (with tumor borders)
- ┃ ┃ ┣ 📜output_annotations.csv            # Preprocessed output annotations for model input ( with bounding boxs instead of tumor borders )
+ ┃ ┃ ┣ 📜original_annotations.csv          # Original CSV file containing annotations with tumor borders
+ ┃ ┃ ┣ 📜output_annotations.csv            # Preprocessed CSV file containing annotations with bounding boxs
  ┃ ┃ ┣ 📜test_annotation.txt               # Annotations for test data in text format
  ┃ ┃ ┣ 📜test_annotations.csv              # CSV annotations for test dataset
  ┃ ┃ ┗ 📜train_annotations.csv             # CSV annotations for training dataset
