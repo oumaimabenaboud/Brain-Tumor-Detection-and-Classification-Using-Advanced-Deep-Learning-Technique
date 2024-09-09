@@ -31,7 +31,7 @@ def allowed_file(filename):
 
 
 # Paths for config and model weights
-config_output_filename = os.path.join('./model/', 'model_frcnn_config_test_2.pickle')
+config_output_filename = os.path.join('./model/', 'model_frcnn_config_test.pickle')
 
 # Load the model using the utility function
 model_rpn, model_classifier_only, C = load_model(config_output_filename)
