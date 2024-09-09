@@ -112,9 +112,81 @@ disp('Images have been successfully saved to the folder.');
 ### Annotations Extraction
 In addition to the image conversion, the annotations related to the tumor regions were extracted from the `.mat` files and saved as `.txt` files. These annotations include the tumor type, bounding boxes. For detailed annotations extraction steps, you can refer to the `data_preparation.ipynb` notebook available in this repository.
 
+## Model Training
+To enhance model robustness, advanced data augmentation techniques were applied, including horizontal and vertical flipping, as well as 90-degree rotations. The training spanned over 380 epochs, with 4,000 iterations per epoch.
+
+- **Framework**: TensorFlow
+- **Model**: Faster R-CNN with a hybrid VGG-16 and ResNet backbone
+- **Optimizer**: Adam for both the RPN and the classifier, and the Stochastic Gradient Descent (SGD) optimizer
+is used to compile the combined model of RPN and classifier.
+- **Batch Size**: 4 Regions of Interest (RoIs) per batch
+- **Training Time**: Approximately 48 hours
+
+For detailed training steps, refer to `training_script.ipnyb`.
+
+---
+
+## Results
+
+The model demonstrated strong performance in detecting and classifying brain tumors from MRI images, achieving an overall **mean Average Precision (mAP)** of 91.97% across the following tumor types:
+
+- **Glioma**: 85.2% AP
+- **Meningioma**: 93.4% AP
+- **Pituitary Tumor**: 97.3% AP
+
+The results are visualized with bounding boxes and confidence scores on the uploaded MRI images. Detailed results and visualizations are available in the `.ipynb` notebook.
+
+---
+
+## Deployment
+
+The model is deployed as a web application using Flask. Users can upload MRI images through the **NeuroScan AI** web interface, and the system returns real-time predictions of tumor type, confidence scores, and bounding box visualizations.
+
+# NeuroScan AI
+
+---
+
+### System Architecture
+
+<p align="center">
+  <img src="" alt="System Architecture Diagram">
+</p>
+<br>
+<i><p align="center">System Architecture Diagram</p></i>
+
+The system architecture of **NeuroScan AI** consists of the following components:
+
+1. **Frontend Interface**: Provides a drag-and-drop user interface for users to upload MRI images for brain tumor detection.
+2. **Flask Backend**: Handles the uploaded MRI images, processes them, and invokes the AI model to generate predictions.
+3. **AI Model**: A pre-trained model (Faster R-CNN with a hybrid VGG-16 and ResNet architecture) deployed in the backend to detect and classify brain tumors.
+
+---
+
+### NeuroScan AI Web Interface
+
+<p align="center">
+  <img src="" alt="NeuroScan AI Web Interface">
+</p>
+<br>
+![web_archi](https://github.com/user-attachments/assets/cc728340-bee9-4918-9b07-e285c89e92ac)
 
 
-### Steps to Install
+The **NeuroScan AI** interface offers a simple and intuitive platform for users:
 
-1. Clone the repository:
-  
+- **(a) Welcome Section**: Provides an introduction and explanation of the platform's purpose.
+- **(b) Features Section**: Outlines the system's capabilities and unique benefits.
+- **(c) Image Upload & Result Display**: Users can upload their MRI images, and the system will return the tumor detection and classification results, including confidence scores.
+- **(d) Footer**: Contains a contact form for inquiries and additional details about the platform.
+
+---
+
+### Backend Integration
+
+The backend is powered by Flask, which processes the uploaded MRI images and connects with the AI model for analysis. After processing, Flask returns the prediction results to the frontend in real time.
+
+### To deploy the backend:
+
+1. **Install Flask and other dependencies**:
+   ```bash
+   pip install Flask tensorflow
+
