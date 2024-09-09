@@ -26,40 +26,40 @@ The model is deployed as a web application called **NeuroScan AI**, where users 
 ## Repository Structure
 ```bash
 📦Brain-Tumor-Detection-and-Classification-Using-Advanced-Deep-Learning-Technique
- ┣ 📂.git
- ┣ 📂dataset
- ┃ ┣ 📂annotations
- ┃ ┃ ┣ 📜annotation.txt
- ┃ ┃ ┣ 📜original_annotations.csv
- ┃ ┃ ┣ 📜output_annotations.csv
- ┃ ┃ ┣ 📜test_annotation.txt
- ┃ ┃ ┣ 📜test_annotations.csv
- ┃ ┃ ┗ 📜train_annotations.csv
- ┃ ┣ 📂images
- ┃ ┣ 📂mat_files
- ┃ ┣ 📂test
- ┃ ┣ 📂train
- ┃ ┗ 📜data_preparation.ipynb
- ┣ 📂fasterr-cnn
- ┣ 📂NeuroScan AI
- ┃ ┣ 📂model
- ┃ ┃ ┣ 📜model_frcnn_config_test.pickle
- ┃ ┃ ┗ 📜model_frcnn_hybrid_new_test.hdf5
- ┃ ┣ 📂static
- ┃ ┃ ┣ 📂css
- ┃ ┃ ┣ 📂fonts
- ┃ ┃ ┣ 📂img
- ┃ ┃ ┣ 📂js
- ┃ ┃ ┣ 📂output_mri
- ┃ ┃ ┗ 📂uploaded_mri
- ┃ ┣ 📂templates
- ┃ ┃ ┗ 📜index.html
- ┃ ┣ 📜app.py
- ┃ ┣ 📜config_module.py
- ┃ ┣ 📜model_load.py
- ┃ ┗ 📜preprocessing.py
- ┣ 📂Nouveau dossier
- ┗ 📜README.md
+ ┣ 📂dataset                               # Directory containing the dataset and annotations
+ ┃ ┣ 📂annotations                         # Annotations related to tumor regions (in various formats)
+ ┃ ┃ ┣ 📜annotation.txt                    # Annotations for train data in text format
+ ┃ ┃ ┣ 📜original_annotations.csv          # Original CSV file containing annotations (with tumor borders)
+ ┃ ┃ ┣ 📜output_annotations.csv            # Preprocessed output annotations for model input ( with bounding boxs instead of tumor borders )
+ ┃ ┃ ┣ 📜test_annotation.txt               # Annotations for test data in text format
+ ┃ ┃ ┣ 📜test_annotations.csv              # CSV annotations for test dataset
+ ┃ ┃ ┗ 📜train_annotations.csv             # CSV annotations for training dataset
+ ┃ ┣ 📂images                              # Directory containing converted MRI images (from .mat to .jpg)
+ ┃ ┣ 📂mat_files                           # Original brain tumor MRI images in MATLAB .mat format
+ ┃ ┣ 📂test                                # Test dataset images
+ ┃ ┣ 📂train                               # Training dataset images
+ ┃ ┗ 📜data_preparation.ipynb              # Jupyter notebook for preprocessing and dataset preparation
+ ┣ 📂fasterr-cnn                           # Directory containing Faster R-CNN model code and scripts
+ ┣ 📂NeuroScan AI                          # Directory for web-based application files
+ ┃ ┣ 📂model                               # Pre-trained models for Faster R-CNN hybrid architecture
+ ┃ ┃ ┣ 📜model_frcnn_config_test.pickle    # Model configuration file for Faster R-CNN
+ ┃ ┃ ┗ 📜model_frcnn_hybrid_new_test.hdf5  # Pre-trained model weights (Faster R-CNN with hybrid VGG-16/ResNet)
+ ┃ ┣ 📂static                              # Static files for web app (CSS, JS, fonts, images)
+ ┃ ┃ ┣ 📂css                          
+ ┃ ┃ ┣ 📂fonts                        
+ ┃ ┃ ┣ 📂img                          
+ ┃ ┃ ┣ 📂js                           
+ ┃ ┃ ┣ 📂output_mri                   # Directory where processed MRI results are saved
+ ┃ ┃ ┗ 📂uploaded_mri                 # Directory for uploaded MRI scans from users
+ ┃ ┣ 📂templates                      # HTML templates for Flask web app
+ ┃ ┃ ┗ 📜index.html                   
+ ┃ ┣ 📜app.py                         # Flask application for running the NeuroScan AI web app
+ ┃ ┣ 📜config_module.py               # Configuration module for model loading and app settings
+ ┃ ┣ 📜model_load.py                  # Script to load pre-trained Faster R-CNN model
+ ┃ ┗ 📜preprocessing.py               # Script for preprocessing MRI images before prediction
+ ┣ 📂Nouveau dossier                  
+ ┗ 📜README.md                        # Readme file explaining the project details and usage
+
 ```
 
 ## Dataset Description
