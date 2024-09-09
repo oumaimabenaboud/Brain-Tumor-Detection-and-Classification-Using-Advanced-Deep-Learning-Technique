@@ -110,7 +110,7 @@ end
 disp('Images have been successfully saved to the folder.');
 ```
 ### Annotations Extraction
-In addition to the image conversion, the annotations related to the tumor regions were extracted from the `.mat` files and saved as `.txt` files. These annotations include the tumor type, bounding boxes. For detailed annotations extraction steps, you can refer to the data_preparation.ipynb notebook available in this repository.
+In addition to the image conversion, the annotations related to the tumor regions were extracted from the `.mat` files and saved as `.txt` files. These annotations include the tumor type, bounding boxes. For detailed annotations extraction steps, you can refer to the `data_preparation.ipynb` notebook available in this repository.
 
 
 
