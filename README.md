@@ -2,7 +2,7 @@
 
 This repository contains the resources and code for the **Smart Healthcare System for Brain Tumor Detection and Classification Using Advanced Deep Learning Techniques** project. The project leverages an enhanced Faster R-CNN framework with a hybrid VGG-16 and ResNet architecture for detecting and classifying brain tumors from MRI images. This system is designed to assist healthcare professionals in making accurate and efficient diagnoses by automating the detection process.
 
-## Table of Contents
+## 📑 Table of Contents
 
 - [Project Overview](#project-overview)
 - [Features](#features)
