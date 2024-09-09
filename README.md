@@ -9,6 +9,7 @@ This repository contains the resources and code for the **Smart Healthcare Syste
 - [Repository Structure](#repository-structure)
 - [Dataset Description](#dataset-description)
 
+---
 
 ## Project Overview
 
@@ -16,12 +17,16 @@ Brain tumor detection and classification is a critical task in medical imaging t
 
 The model is deployed as a web application called **NeuroScan AI**, where users can upload MRI images and receive real-time results on tumor detection and classification.
 
+---
+
 ## Features
 
 - **Automated Detection and Classification**: Detects and classifies brain tumors into glioma, meningioma, and pituitary tumors.
 - **Web-based Interface**: Easy-to-use interface for uploading MRI images and receiving diagnostic results.
 - **Real-time Results**: Provides real-time predictions of tumor type, along with confidence scores.
 - **Visualization**: Displays bounding boxes around detected tumors on the uploaded MRI image.
+
+---
 
 ## Repository Structure
 ```bash
@@ -61,6 +66,8 @@ The model is deployed as a web application called **NeuroScan AI**, where users 
  ┗ 📜README.md                        # Readme file explaining the project details and usage
 
 ```
+
+---
 
 ## Dataset Description
 
@@ -112,6 +119,8 @@ disp('Images have been successfully saved to the folder.');
 ### Annotations Extraction
 In addition to the image conversion, the annotations related to the tumor regions were extracted from the `.mat` files and saved as `.txt` files. These annotations include the tumor type, bounding boxes. For detailed annotations extraction steps, you can refer to the `data_preparation.ipynb` notebook available in this repository.
 
+---
+
 ## Model Training
 To enhance model robustness, advanced data augmentation techniques were applied, including horizontal and vertical flipping, as well as 90-degree rotations. The training spanned over 380 epochs, with 4,000 iterations per epoch.
 
@@ -142,17 +151,9 @@ The results are visualized with bounding boxes and confidence scores on the uplo
 
 The model is deployed as a web application using Flask. Users can upload MRI images through the **NeuroScan AI** web interface, and the system returns real-time predictions of tumor type, confidence scores, and bounding box visualizations.
 
-# NeuroScan AI
-
----
-
 ### System Architecture
 
-<p align="center">
-  <img src="" alt="System Architecture Diagram">
-</p>
-<br>
-<i><p align="center">System Architecture Diagram</p></i>
+![structure](https://github.com/user-attachments/assets/f5cec18e-e7f7-4501-b144-bd1f8d627df9)
 
 The system architecture of **NeuroScan AI** consists of the following components:
 
@@ -160,25 +161,20 @@ The system architecture of **NeuroScan AI** consists of the following components
 2. **Flask Backend**: Handles the uploaded MRI images, processes them, and invokes the AI model to generate predictions.
 3. **AI Model**: A pre-trained model (Faster R-CNN with a hybrid VGG-16 and ResNet architecture) deployed in the backend to detect and classify brain tumors.
 
----
-
 ### NeuroScan AI Web Interface
 
-<p align="center">
-  <img src="" alt="NeuroScan AI Web Interface">
-</p>
-<br>
-![web_archi](https://github.com/user-attachments/assets/cc728340-bee9-4918-9b07-e285c89e92ac)
+| a                                                                                 | b                                                                                 |
+| ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| ![a](https://github.com/user-attachments/assets/50557499-71cd-484c-9d74-03f978d78572) | ![b](https://github.com/user-attachments/assets/75401949-6aac-4fd1-9199-d2d9baa0e544) |
+| c                                                                                 | d                                                                                 |
+| ![c](https://github.com/user-attachments/assets/e1e56947-571b-401b-bf8e-d72c11b2c508) | ![d](https://github.com/user-attachments/assets/4bbf8fe8-6089-461d-8888-09d3aa2a4b7c) |
 
+The **NeuroScan AI** interface is designed to be user-friendly and responsive, enabling users to upload MRI images with ease. It includes several main components:
 
-The **NeuroScan AI** interface offers a simple and intuitive platform for users:
-
-- **(a) Welcome Section**: Provides an introduction and explanation of the platform's purpose.
-- **(b) Features Section**: Outlines the system's capabilities and unique benefits.
-- **(c) Image Upload & Result Display**: Users can upload their MRI images, and the system will return the tumor detection and classification results, including confidence scores.
-- **(d) Footer**: Contains a contact form for inquiries and additional details about the platform.
-
----
+- **(a) Slider Section**: Provides an introduction to the platform and its purpose.
+- **(b) Tumor Type Explanation Section**: Offers a detailed explanation of each brain tumor type, helping users understand the different classifications (glioma, meningioma, and pituitary tumors).
+- **(c) Services Section**: Outlines the platform's features and capabilities.
+- **(d) Image Upload & Result Display**: An image upload form where users can submit MRI images for tumor detection. Results, including classification and confidence scores, are displayed on the same page.
 
 ### Backend Integration
 
@@ -188,5 +184,11 @@ The backend is powered by Flask, which processes the uploaded MRI images and con
 
 1. **Install Flask and other dependencies**:
    ```bash
-   pip install Flask tensorflow
+   pip install Flask
+   pip install -r requirements.txt
+   ```
+2. **Run the Flask server**:
+ ```bash
+   Flask run
+   ```
 
