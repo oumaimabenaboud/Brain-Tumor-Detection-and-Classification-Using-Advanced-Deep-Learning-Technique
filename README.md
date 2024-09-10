@@ -47,6 +47,10 @@ The model is deployed as a web application called **NeuroScan AI**, where users 
  ┃ ┣ 📂train                               # Training dataset images
  ┃ ┗ 📜data_preparation.ipynb              # Jupyter notebook for preprocessing and dataset preparation
  ┣ 📂fasterr-cnn                           # Directory containing Faster R-CNN model code and scripts
+ ┃ ┣ 📂model
+ ┃ ┃ ┗ 📜record-hybrid-new-test.csv        
+ ┃ ┣ 📜frcnn_train_new_resnet.ipnyb                        
+ ┃ ┗ 📜model_frcnn_config_test.pickle      # Model configuration file for Faster R-CNN
  ┣ 📂NeuroScan AI                          # Directory for web-based application files
  ┃ ┣ 📂model                               # Pre-trained models for Faster R-CNN hybrid architecture
  ┃ ┃ ┣ 📜model_frcnn_config_test.pickle    # Model configuration file for Faster R-CNN
@@ -133,7 +137,7 @@ is used to compile the combined model of RPN and classifier.
 - **Batch Size**: 4 Regions of Interest (RoIs) per batch
 - **Training Time**: Approximately 48 hours
 
-For detailed training steps, refer to `training_script.ipnyb`.
+For detailed training steps, refer to `frcnn_train_new_resnet.ipnyb`.
 
 ---
 
@@ -145,7 +149,7 @@ The model demonstrated strong performance in detecting and classifying brain tum
 - **Meningioma**: 93.4% AP
 - **Pituitary Tumor**: 97.3% AP
 
-The results are visualized with bounding boxes and confidence scores on the uploaded MRI images. Detailed results and visualizations are available in the `.ipynb` notebook.
+The results are visualized with bounding boxes and confidence scores on the uploaded MRI images. Detailed results and visualizations are available in the `frcnn_train_new_resnet.ipynb` notebook.
 
 ---
 
