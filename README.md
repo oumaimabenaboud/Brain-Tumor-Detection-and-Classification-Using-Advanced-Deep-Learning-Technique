@@ -48,8 +48,8 @@ The model is deployed as a web application called **NeuroScan AI**, where users 
  ┃ ┗ 📜data_preparation.ipynb              # Jupyter notebook for preprocessing and dataset preparation
  ┣ 📂fasterr-cnn                           # Directory containing Faster R-CNN model code and scripts
  ┃ ┣ 📂model
- ┃ ┃ ┗ 📜record-hybrid-new-test.csv        
- ┃ ┣ 📜frcnn_train_new_resnet.ipnyb                        
+ ┃ ┃ ┗ 📜record-hybrid-new-test.csv        # CSV file that logs the training metrics during the training of the Faster R-CNN model
+ ┃ ┣ 📜frcnn_train_new_resnet.ipnyb        # Jupyter notebook for training and evaluating the Faster R-CNN model            
  ┃ ┗ 📜model_frcnn_config_test.pickle      # Model configuration file for Faster R-CNN
  ┣ 📂NeuroScan AI                          # Directory for web-based application files
  ┃ ┣ 📂model                               # Pre-trained models for Faster R-CNN hybrid architecture
